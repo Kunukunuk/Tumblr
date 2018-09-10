@@ -24,6 +24,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
         session.configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         let task = session.dataTask(with: url) { (data, response, error) in
             if let error = error {
+                self.alert()
                 print(error.localizedDescription)
             } else if let data = data,
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
@@ -37,6 +38,14 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
             }
         }
         task.resume()
+    }
+    
+    func alert() {
+        let alertController = UIAlertController(title: "Can not get the movies", message: "The internet connection appears to be offline", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "Try Again", style: .default, handler: {UIAlertAction in self.viewDidLoad()})
+        alertController.addAction(OKAction)
+        tableView.addSubview(alertController.view)
+        present(alertController, animated: true)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
