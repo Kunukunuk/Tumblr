@@ -32,16 +32,16 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KA8-VA-vhv">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="375" id="aUn-VM-62T"/>
-                                                        <constraint firstAttribute="height" constant="250" id="xlL-NW-MBO"/>
+                                                        <constraint firstAttribute="height" constant="250" id="3L7-tT-VYp"/>
+                                                        <constraint firstAttribute="width" constant="375" id="kXW-51-fzz"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="KA8-VA-vhv" secondAttribute="bottom" id="Exk-Bb-zuc"/>
-                                                <constraint firstItem="KA8-VA-vhv" firstAttribute="leading" secondItem="WnB-lB-qfu" secondAttribute="leading" id="GVx-mc-dIM"/>
-                                                <constraint firstItem="KA8-VA-vhv" firstAttribute="top" secondItem="WnB-lB-qfu" secondAttribute="top" id="lks-Yk-5jE"/>
-                                                <constraint firstAttribute="trailing" secondItem="KA8-VA-vhv" secondAttribute="trailing" id="xmP-UO-hfw"/>
+                                                <constraint firstAttribute="trailing" secondItem="KA8-VA-vhv" secondAttribute="trailing" id="OGO-6e-9ld"/>
+                                                <constraint firstItem="KA8-VA-vhv" firstAttribute="leading" secondItem="WnB-lB-qfu" secondAttribute="leading" id="hWt-Vo-6WX"/>
+                                                <constraint firstAttribute="bottom" secondItem="KA8-VA-vhv" secondAttribute="bottom" id="kat-pc-jrf"/>
+                                                <constraint firstItem="KA8-VA-vhv" firstAttribute="top" secondItem="WnB-lB-qfu" secondAttribute="top" id="qyV-gA-8h7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

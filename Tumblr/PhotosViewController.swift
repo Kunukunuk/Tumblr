@@ -13,12 +13,22 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     var posts: [[String: Any]] = []
+    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
-
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(PhotosViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        getTumblrImage()
+        
+    }
+    
+    func getTumblrImage() {
+        
         let url = URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/posts/photo?api_key=Q6vHoaVm5L1u2ZAW1fqv3Jw48gFzYVg9P0vH0VHl3GVy6quoGV")!
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         session.configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
@@ -28,21 +38,27 @@ class PhotosViewController: UIViewController, UITableViewDataSource {
                 print(error.localizedDescription)
             } else if let data = data,
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                print(dataDictionary)
                 
                 // TODO: Get the posts and store in posts property
                 let responseDictionary = dataDictionary["response"] as! [String: Any]
                 self.posts = responseDictionary["posts"] as! [[String: Any]]
+                
+                self.refreshControl.endRefreshing()
                 // TODO: Reload the table view
                 self.tableView.reloadData()
+            
             }
         }
         task.resume()
     }
     
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl) {
+        getTumblrImage()
+    }
+    
     func alert() {
         let alertController = UIAlertController(title: "Can not get the movies", message: "The internet connection appears to be offline", preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "Try Again", style: .default, handler: {UIAlertAction in self.viewDidLoad()})
+        let OKAction = UIAlertAction(title: "Try Again", style: .default, handler: {UIAlertAction in self.getTumblrImage()})
         alertController.addAction(OKAction)
         tableView.addSubview(alertController.view)
         present(alertController, animated: true)
