@@ -2,7 +2,7 @@
 
 **Tumblr** is a photo browsing app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
 
-Time spent: **8** hours spent in total
+Time spent: **15** hours spent in total
 
 ## User Stories
 
@@ -13,8 +13,8 @@ The following **required** user stories are complete:
 The following **stretch** user stories are implemented:
 
 - [X] User sees an alert when there's a networking error (+1pt)
-- [ ] While poster is being fetched, user see's a placeholder image (+1pt)
-- [ ] User sees image transition for images coming from network, not when it is loaded from cache (+1pt)
+- [x] While poster is being fetched, user see's a placeholder image (+1pt)
+- [x] User sees image transition for images coming from network, not when it is loaded from cache (+1pt)
 - [ ] Customize the selection effect of the cell (+1pt)
 
 The following **additional** user stories are implemented:
@@ -30,7 +30,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![kun_huang_tumblr](https://user-images.githubusercontent.com/28847045/45331384-5eea2780-b538-11e8-93bc-6279770637db.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
