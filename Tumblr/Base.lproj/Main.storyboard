@@ -130,9 +130,13 @@
                                             <action selector="closeFullScreen:" destination="G4x-Hu-m7M" eventType="touchUpInside" id="e5t-GL-oKF"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eof-Re-AV4">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eof-Re-AV4">
                                         <rect key="frame" x="0.0" y="40" width="375" height="607"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="NDE-dt-ijV" appends="YES" id="obF-pl-W05"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -156,6 +160,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tr8-cX-4ms" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <rotationGestureRecognizer id="NDE-dt-ijV">
+                    <connections>
+                        <action selector="rotateImage:" destination="G4x-Hu-m7M" id="KWE-1L-nKW"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2869.5999999999999" y="33.733133433283363"/>
         </scene>

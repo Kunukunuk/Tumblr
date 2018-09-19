@@ -36,6 +36,10 @@ class FullScreenPhotoViewController: UIViewController, UIScrollViewDelegate {
         return fullScreenImage
     }
     
+    @IBAction func rotateImage(_ sender: UIRotationGestureRecognizer) {
+        sender.view?.transform = (sender.view?.transform)!.rotated(by: sender.rotation)
+        sender.rotation = 0
+    }
     /*
     // MARK: - Navigation
 
