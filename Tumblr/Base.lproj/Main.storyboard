@@ -46,7 +46,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="tumblrImage" destination="KA8-VA-vhv" id="FF3-bh-QTJ"/>
-                                            <segue destination="gng-Yx-hiZ" kind="show" id="Amn-xW-YJi"/>
+                                            <segue destination="gng-Yx-hiZ" kind="show" identifier="GoToDetails" id="Uh6-Nj-Rsx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -78,8 +78,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="me8-ma-xlq">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="me8-ma-xlq">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="h4w-Ef-xxa" appends="YES" id="yXb-9Z-c5r"/>
@@ -87,12 +88,6 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="krc-Ij-09i" firstAttribute="trailing" secondItem="me8-ma-xlq" secondAttribute="trailing" id="Gdg-DD-Mk2"/>
-                            <constraint firstItem="me8-ma-xlq" firstAttribute="top" secondItem="krc-Ij-09i" secondAttribute="top" id="J4i-1z-Y0q"/>
-                            <constraint firstItem="me8-ma-xlq" firstAttribute="leading" secondItem="krc-Ij-09i" secondAttribute="leading" id="nFv-Ue-2QI"/>
-                            <constraint firstItem="krc-Ij-09i" firstAttribute="bottom" secondItem="me8-ma-xlq" secondAttribute="bottom" id="x1Q-6a-iVA"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="krc-Ij-09i"/>
                     </view>
                     <connections>
@@ -102,7 +97,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Fe-aC-e5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="h4w-Ef-xxa">
                     <connections>
-                        <segue destination="G4x-Hu-m7M" kind="presentation" identifier="FullScreen" modalTransitionStyle="flipHorizontal" id="wMD-it-9Je"/>
+                        <segue destination="G4x-Hu-m7M" kind="presentation" identifier="FullScreen" id="ygh-gV-Kpj"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
