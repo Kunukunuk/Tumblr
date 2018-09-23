@@ -141,7 +141,15 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
 
             let url = URL(string: urlString)
             
-            cell.tumblrImage.af_setImage(withURL: url!)
+            let placeHolderImage = UIImage(named: "launch_image")
+            
+            cell.tumblrImage.af_setImage(
+                withURL: url!,
+                placeholderImage: placeHolderImage,
+                imageTransition: .crossDissolve(1),
+                runImageTransitionIfCached: false,
+                completion: (nil)
+            )
 
         }
         
